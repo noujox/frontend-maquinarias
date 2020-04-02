@@ -15,7 +15,7 @@ class Maquinarias extends React.Component {
     async componentDidMount() {
         try {
             const items = await Rmaquinaria();
-            console.log(items);
+            this.setState({jeison: items})
             
         } catch (error) {
             console.log(error.message);
@@ -23,10 +23,12 @@ class Maquinarias extends React.Component {
     }
 
     render() {
-        //            {JSON.parse(jeison).map(maqui => <Maquina maqui= {maqui}/>)}
+        
         //console.log(this.state)
 
-        return ( <div> </div>)
+        return ( <div>{
+            this.state.jeison.map(maqui => <Maquina maqui= {maqui}/>)
+            } </div>)
     }
 }
 
