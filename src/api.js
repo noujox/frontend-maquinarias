@@ -1,17 +1,16 @@
-const baseUrl = 'http://localhost:3000'
+const baseUrll = 'http://localhost:3000'
 
 async function request(url,method,data){
-    const response = await fetch(`$(baseUrl)$(url)`, {
+    const response = await fetch(`${baseUrll}${url}`, {
         method,
-        headers:{
+        headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: data ? JSON.stringify(data) : undefined,
     });
     const jsonResponse = await response.json();
-
-    return jsonResponse.data;
+    return jsonResponse.result;
 }
 
 export function Rmaquinaria(){

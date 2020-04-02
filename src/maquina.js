@@ -1,14 +1,16 @@
 import React from 'react';
 
-function maquina({maqui}){
+function Maquina({maqui}){
   
   return (
     <ul>
-      {
-        maqui.map(dato => <li>{dato}</li>)
-      }
+      <li>{maqui.ESTADO}</li>
+      <li>{maqui.ID}</li>
+      <li>{maqui.MARCA}</li>
+      <li>{maqui.MODELO}</li>
+      <li>{maqui.TIPO}</li>
     </ul>
   )
 }
 
-export default maquina;
+export default Maquina;
