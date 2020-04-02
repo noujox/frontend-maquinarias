@@ -1,0 +1,36 @@
+{
+    "result": [
+      {
+        "ESTADO": "NO DISPONIBLE", 
+        "ID(PATENTE)": "5e7fe29b33c806723cd55ba4", 
+        "MARCA": "hyundai rass", 
+        "MODELO": "xs-2200", 
+        "PRECIO": 11000, 
+        "TIPO": "retroescabadora"
+      }, 
+      {
+        "ESTADO": "DISPONIBLE", 
+        "ID(PATENTE)": "5e8113a7ac82157e9f57461d", 
+        "MARCA": "volvo", 
+        "MODELO": "xs-2200", 
+        "PRECIO": 11000, 
+        "TIPO": "retroescabadora-especial"
+      }, 
+      {
+        "ESTADO": "DISPONIBLE", 
+        "ID(PATENTE)": "ww-ww-ww", 
+        "MARCA": "volvo", 
+        "MODELO": "qqqqq", 
+        "PRECIO": 20000, 
+        "TIPO": "camion algibe"
+      }, 
+      {
+        "ESTADO": "DISPONIBLE", 
+        "ID(PATENTE)": "5e83adaa33b83e5e9b844bb6", 
+        "MARCA": "volvo", 
+        "MODELO": "qqqqq", 
+        "PRECIO": 20000, 
+        "TIPO": "camion algibe"
+      }
+    ]
+  }
