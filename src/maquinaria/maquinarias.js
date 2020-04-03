@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Rmaquinaria } from './api'
+import { Rmaquinaria } from '../api'
 import Maquina from './maquina'
 
 class Maquinarias extends React.Component {
@@ -26,8 +26,10 @@ class Maquinarias extends React.Component {
         
         //console.log(this.state)
 
-        return ( <div>{
-            this.state.jeison.map(maqui => <Maquina maqui= {maqui}/>)
+        return ( <div>
+            <h1 style= {{ textAlign: "center" }}>Maquinarias</h1>
+            {
+            this.state.jeison.map(maqui => <Maquina key={maqui.ID} maqui= {maqui}/>)
             } </div>)
     }
 }

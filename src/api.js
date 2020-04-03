@@ -1,4 +1,4 @@
-const baseUrll = 'http://localhost:3000'
+const baseUrll = 'http://192.168.1.89:3000'
 
 async function request(url,method,data){
     const response = await fetch(`${baseUrll}${url}`, {
@@ -15,4 +15,13 @@ async function request(url,method,data){
 
 export function Rmaquinaria(){
     return request('/maquinarias', 'GET')
+}
+export function Umaquinaria(data){
+    const jei = {  
+        "MARCA": data.marca, 
+        "MODELO": data.modelo, 
+        "PRECIO": data.precio, 
+        "TIPO": data.tipo
+    }
+    return request('/maquinarias/', 'POST',data)
 }
