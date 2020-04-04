@@ -1,14 +1,15 @@
 import React from 'react';
+import {Umaquinaria,Cmaquinaria} from '../api'
 
-class  Umaquina extends React.Component{
+class  UCmaquina extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            patente: props.location.state ? props.location.state.patente:''  ,
-            marca: '',
-            modelo: '',
-            precio: '',
-            tipo: '',
+            patente: props.location.state.maqui ? props.location.state.maqui.PATENTE:''  ,
+            marca: props.location.state.maqui ? props.location.state.maqui.MARCA : ''  ,
+            modelo: props.location.state.maqui ? props.location.state.maqui.MODELO : '',
+            precio: props.location.state.maqui ? props.location.state.maqui.PRECIO : '',
+            tipo: props.location.state.maqui ? props.location.state.maqui.TIPO : '',
              
 
         };
@@ -23,6 +24,7 @@ class  Umaquina extends React.Component{
 
     render(){
         var accion = '';
+        const history= this.props.history;
         this.props.location.state ?  accion= this.props.location.state.accion : accion = 'create' ;
         
         return (
@@ -37,7 +39,7 @@ class  Umaquina extends React.Component{
                         name = "patente" 
                         id= "patente" placeholder= "Patente.." 
                     />:
-                        <input  
+                        <input  onChange= {this.onChange.bind(this)}
                         value= {this.state.patente} 
                         name = "patente" 
                         id= "patente" placeholder= "Patente.." 
@@ -64,11 +66,32 @@ class  Umaquina extends React.Component{
                         name = "tipo" 
                         id= "tipo" placeholder= "Tipo.." 
                     />
-                    <button>Guardar</button>
+                    <button
+                        onClick={()=> {
+                            if(accion == "update"){
+                                Umaquinaria({patente:this.state.patente,
+                                    marca:this.state.marca,
+                                    modelo: this.state.modelo,
+                                    precio: this.state.precio,
+                                    tipo: this.state.tipo,
+                                });
+                                history.push('/maquinarias');
+                            }else{
+                                Cmaquinaria({
+                                    patente:this.state.patente,
+                                    marca:this.state.marca,
+                                    modelo: this.state.modelo,
+                                    precio: this.state.precio,
+                                    tipo: this.state.tipo
+                                });
+                                history.push('/maquinarias');
+                            }
+
+                        }}>Guardar</button>
                 </div>
             </div>
         )
     }
 }
 
-export default Umaquina;
+export default UCmaquina;
