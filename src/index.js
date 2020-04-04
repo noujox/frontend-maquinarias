@@ -9,7 +9,7 @@ const App = () => (
     <BrowserRouter>
         <React.Fragment>
             <Route exact path= "/maquinarias" component = {Maquinarias}/>
-            <Route path= "/maquinarias/update" component = {Umaquina}/>
+            <Route path= "/maquinarias/upcrate" component = {Umaquina}/>
         </React.Fragment>
     </BrowserRouter>
     

@@ -23,5 +23,9 @@ export function Umaquinaria(data){
         "PRECIO": data.precio, 
         "TIPO": data.tipo
     }
-    return request('/maquinarias/', 'POST',data)
+    return request(`${"/maquinarias/"}${data.patente}${"/update"}`, 'POST',data)
+}
+
+export function Fmaquinaria(data){
+    return request(`${"/maquinarias/"}${data}`, 'GET')
 }
