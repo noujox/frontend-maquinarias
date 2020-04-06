@@ -45,3 +45,53 @@ export function Xmaquinaria(data){
 
     return request(`${"/maquinarias/"}${data}${"/delete"}`, 'GET');
 }
+//////////////////////////////////////////
+
+export function Rarriendo(){
+    return request('/arriendos', 'GET');
+}
+
+export function Farriendo(data){
+    return request(`${"/arriendos/"}${data}`, 'GET');
+}
+
+export function Carriendo(data){
+    const jei = {
+        "patente": data.patente,  
+        "marca": data.marca, 
+        "modelo": data.modelo, 
+        "precio": data.precio, 
+        "tipo": data.tipo
+    };
+    return request('/arriendos/add','POST',jei);
+}
+//////////////////////////////////////////////////
+
+export function Rclientes(){
+    return request('/clientes', 'GET');
+}
+
+export function Cclientes(data){
+    const jei = {
+        "rut": data.rut,  
+        "nombre": data.nombre, 
+        "email": data.email, 
+        "direccion": data.direccion
+    };
+    return request('/clientes/create','POST',jei);
+}
+//////////////////////////////////////////////////
+
+export function Roperadores(){
+    return request('/operadores', 'GET');
+}
+
+export function Coperadores(data){
+    const jei = {
+        "rut": data.rut,  
+        "nombre": data.nombre, 
+        "email": data.email, 
+        "direccion": data.direccion
+    };
+    return request('/operadores/create','POST',jei);
+}
